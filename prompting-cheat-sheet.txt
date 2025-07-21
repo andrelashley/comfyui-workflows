@@ -1,0 +1,64 @@
+**Photoreal LoRA Generation Cheat Sheet**
+
+---
+
+**✅ What You Already Have:**
+
+* Flux Dev fp8 base model (confirmed working)
+* Custom LoRA trained on your face (solid results)
+* ComfyUI setup (verified)
+* Good lighting and angles in your training set
+* No major artifacting in LoRA samples
+
+---
+
+** It All Comes Down To:**
+
+### 1. Prompting Skill — This Is Everything
+
+* Focus on **minimalist, photoreal prompts**
+* Use **realistic camera + lens terms**, e.g.:
+
+  * `DSLR photo`, `85mm lens`, `f/1.8`, `Fujifilm color`
+* Add **lighting descriptors**:
+
+  * `sunset glow`, `soft window light`, `overcast daylight`, `natural light`
+* Avoid oversaturating or overloading with detail
+* Example:
+
+  ```
+  <lora_name>, natural skin, soft side light, close-up portrait, 85mm lens, f/1.8, Fujifilm color, realistic photo
+  ```
+
+---
+
+### 2. LoRA Strength / CFG Settings
+
+* LoRA weight: `0.6 – 0.8`
+* CFG scale: `6.5 – 8.5`
+* Sampler: `DPM++ 2M SDE Karras`
+* Steps: `30 – 40`
+
+---
+
+### 3. Post-Processing (Optional)
+
+* `FaceDetailer` pass to enhance eyes/lips subtly
+* Use `Magnific` AI for upscale (for dating apps / print)
+
+---
+
+### 4. Fallback Plan: Face Swaps
+
+* If gens aren't context-photoreal, **use LoRA for identity only**
+* Swap identity onto:
+
+  * Stock base bodies (Unsplash, studio models, etc.)
+  * Your own photos or influencer-style pics
+
+---
+
+**TL;DR:**
+You've already nailed the hard stuff. Now it's:
+
+> **Prompt engineering + lighting awareness = realism**
